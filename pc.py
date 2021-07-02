@@ -4,25 +4,15 @@ import urllib.request
 import urllib.response
 from bs4 import BeautifulSoup
 def main():
-    sa=0
-    while True:
-        a=input("请输入要爬取的网页个数：1-3100\n")
-        sa=int(a)
-        if sa>3100:
-            print("数值过大，请重新输入")
-        elif sa<1:
-            print("数值过小！请重新输入")
-        else:
-            break
-    dataknow(sa)
+    dataknow()
 #数据解析
-def dataknow(asdas):
+def dataknow():
     jak=0
     a=0
-    lax=[]
-    for i in range(0,asdas):
+    while True:
+        lax=[]
         a+=1
-        num=10900-a
+        num=10893+a
         strn=str(num)
         turl="http://20a5.com/html/article/index"+strn+".html"
         print(turl)
