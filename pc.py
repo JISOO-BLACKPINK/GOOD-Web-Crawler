@@ -12,7 +12,7 @@ def dataknow():
     while True:
         lax=[]
         a+=1
-        num=10893+a
+        num=14000-a
         strn=str(num)
         turl="http://20a5.com/html/article/index"+strn+".html"
         print(turl)
@@ -24,8 +24,11 @@ def dataknow():
         for dw in lax:
             jak+=1
             with open("D:\\oprea\\"+str(jak)+".jpg","wb") as imgs:
-                lka=urllib.request.urlopen(dw)
-                print("正在下载第"+str(jak)+"张色图")
+                try:
+                    lka=urllib.request.urlopen(dw)
+                except:
+                    print("ERROR")
+                print("正在下载第"+str(jak)+"张图")
                 imgs.write(lka.read())
                 print("下载成功")
 #获取源代码        
@@ -36,9 +39,8 @@ def gethtml(url):
     try:
         rep=urllib.request.urlopen(req)
         p=rep.read().decode("GBK")
-    except urllib.error.URLError as b:
+    except:
         print("ERROR!")
-        print(b)
     return p
 if __name__=="__main__":
     main()
